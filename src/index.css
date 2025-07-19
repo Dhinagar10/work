@@ -1,13 +1,162 @@
+/* Fancy Animated Gradient Background */
 body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #2c003e, #6a0572, #ab23ff, #ff57bb);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Gradient Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Fade In Effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* App Container */
+.container {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+  animation: fadeInUp 0.8s ease;
+  color: white;
+}
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  background: #ffffff22;
+  color: white;
+  box-shadow: inset 0 0 5px #ab23ff44;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+.form input:focus {
+  outline: none;
+  background: #ffffff33;
+  box-shadow: 0 0 8px #ff57bb;
+}
+
+/* Password Row */
+.password-row {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.password-row input {
+  flex: 1;
+}
+
+.generate-btn {
+  padding: 0 14px;
+  font-size: 22px;
+  background: #ff57bb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  height: 48px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.generate-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ff57bb;
+}
+
+/* Save Button */
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #ab23ff, #ff57bb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 17px;
+  transition: transform 0.2s ease, box-shadow 0.3s;
+}
+
+.save-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px #dabfeb;
+}
+
+/* Password List */
+.password-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  animation: fadeInUp 1s ease;
+}
+
+.password-list li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  line-height: 1.5;
+  color: #fff;
+  box-shadow: 0 0 8px #00000033;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar button {
+  padding: 10px 18px;
+  border: none;
+  background: linear-gradient(to right, #ff57bb, #ab23ff);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s ease;
+}
+
+.navbar button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #ab23ff;
 }
